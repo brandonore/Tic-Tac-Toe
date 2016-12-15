@@ -198,7 +198,15 @@ var module = (function (){
         Tic.player2Win();
       }
       // If all boxes are filled, call tieGame();
-      if(boxCount === 9) {
+      if(boxCount === 9 && bArray[0].hasClass(p1Fill) && bArray[4].hasClass(p1Fill) && bArray[8].hasClass(p1Fill)) {
+        Tic.player1Win();
+      } else if(boxCount === 9 && bArray[2].hasClass(p1Fill) && bArray[4].hasClass(p1Fill) && bArray[6].hasClass(p1Fill)) {
+        Tic.player1Win();
+      } else if(boxCount === 9 && bArray[0].hasClass(p2Fill) && bArray[4].hasClass(p2Fill) && bArray[8].hasClass(p2Fill)) {
+        Tic.player2Win();
+      } else if(boxCount === 9 && bArray[2].hasClass(p2Fill) && bArray[4].hasClass(p2Fill) && bArray[6].hasClass(p2Fill)) {
+        Tic.player2Win();
+      } else if(boxCount === 9) {
         Tic.tieGame();
       }
     }
